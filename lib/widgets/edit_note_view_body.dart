@@ -18,9 +18,11 @@ class EditNoteViewBody extends StatelessWidget {
           CustomeAppBar(title: "Edit Note", icon: Icons.check),
           addHieghtSpace(50),
           CustomeTextfield(
+            onSaved: (value){},
               hint: "Title", borderColor: kPrimaryColor, maxLines: 1),
           addHieghtSpace(24),
           CustomeTextfield(
+            onSaved: (value){},
               hint: "Content", borderColor: kPrimaryColor, maxLines: 5),
         ],
       ),
