@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/widgets/notes_app_bar.dart';
+import 'package:notes_app/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -9,18 +10,11 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            NotesAppBar(),
-          ],
-        ),
-      ),
+      body: NotesViewBody(),
     );
   }
 }
+
+
+
 
