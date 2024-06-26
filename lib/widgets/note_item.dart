@@ -29,7 +29,7 @@ class NoteItem extends StatelessWidget {
                 subtitle: Text(
                   "Build Your Carer With\nTharwat Samy",
                   style: TextStyle(
-                    color: Color(0xff312F31),
+                    color: Color(0xff312F31).withOpacity(.7),
                     fontSize: 16,
                   ),
                 ),
@@ -47,7 +47,8 @@ class NoteItem extends StatelessWidget {
               padding: const EdgeInsets.only(top: 16, right: 32, bottom: 24),
               child: Text(
                 "May 21,2022",
-                style: TextStyle(color: Color(0xff312F31), fontSize: 16),
+                style: TextStyle(
+                    color: Color(0xff312F31).withOpacity(.7), fontSize: 16),
               ),
             )
           ],
