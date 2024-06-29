@@ -45,10 +45,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
             borderColor: kPrimaryColor,
           ),
-          addHieghtSpace(70),
+          addHieghtSpace(50),
           CustomeBottomSheetButton(
             onTap: () {
-              if (formKey.currentState!.validate())  {
+              if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 NoteModel note = NoteModel(
                     title: title!,
@@ -61,7 +61,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 setState(() {});
               }
             },
-          )
+          ),
+          addHieghtSpace(16),
         ],
       ),
     );
