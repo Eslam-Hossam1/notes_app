@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/notes_cubit.dart/notes_cubit.dart';
 import 'package:notes_app/helper/add_height_space.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/CustomeTextField.dart';
 import 'package:notes_app/widgets/custome_bottom_sheet_button.dart';
+import 'package:intl/intl.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -53,7 +55,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 NoteModel note = NoteModel(
                     title: title!,
                     subTitle: subTitle!,
-                    date: DateTime.now.toString(),
+                    date: getDate(),
                     color: Colors.blue.value);
                 BlocProvider.of<AddNoteCubit>(context).addNote(note);
               } else {
@@ -66,5 +68,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
         ],
       ),
     );
+  }
+
+  String getDate() {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('yyyy-MM-dd').format(now);
+    return formattedDate;
   }
 }
