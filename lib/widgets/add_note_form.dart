@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
-import 'package:notes_app/cubits/notes_cubit.dart/notes_cubit.dart';
 import 'package:notes_app/helper/add_height_space.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/CustomeTextField.dart';
+import 'package:notes_app/widgets/color_list_view.dart';
 import 'package:notes_app/widgets/custome_bottom_sheet_button.dart';
 import 'package:intl/intl.dart';
 
@@ -47,7 +47,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
             borderColor: kPrimaryColor,
           ),
-          addHieghtSpace(50),
+          addHieghtSpace(16),
+          ColorListView(),
+          addHieghtSpace(16),
           CustomeBottomSheetButton(
             onTap: () {
               if (formKey.currentState!.validate()) {

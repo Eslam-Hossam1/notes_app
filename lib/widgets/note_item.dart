@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/notes_cubit.dart/notes_cubit.dart';
+import 'package:notes_app/cubits/read_notes_cubit.dart/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
+import 'package:notes_app/widgets/delete_note_dialog.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({
@@ -16,7 +17,7 @@ class NoteItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, EditNoteView.id,arguments: note);
+          Navigator.pushNamed(context, EditNoteView.id, arguments: note);
         },
         child: Container(
           decoration: BoxDecoration(
@@ -46,9 +47,13 @@ class NoteItem extends StatelessWidget {
                     ),
                   ),
                   trailing: IconButton(
-                    onPressed: () {
-                      note.delete();
-                      BlocProvider.of<NotesCubit>(context).fetchNotes();
+                    onPressed: () async {
+                      await showDialog(
+                          context: context,
+                          builder: (context) {
+                            return DeleteNoteDialog(note: note,);
+                          });
+                      
                     },
                     icon: Icon(
                       Icons.delete,

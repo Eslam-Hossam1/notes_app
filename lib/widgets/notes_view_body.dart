@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/notes_cubit.dart/notes_cubit.dart';
+import 'package:notes_app/cubits/read_notes_cubit.dart/notes_cubit.dart';
 import 'package:notes_app/helper/add_height_space.dart';
 import 'package:notes_app/widgets/custome_app_bar.dart';
 import 'package:notes_app/widgets/note_item.dart';
