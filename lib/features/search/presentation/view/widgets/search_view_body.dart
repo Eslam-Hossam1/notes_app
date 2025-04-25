@@ -15,12 +15,12 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SearchSliverAppBar(),
-        SliverToBoxAdapter(
-          child: Padding(
+    return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      child:  CustomScrollView(
+        slivers: [
+          SearchSliverAppBar(),
+          SliverToBoxAdapter(
             child: Column(
               children: [
                 SizedBox(height: 16),
@@ -29,9 +29,9 @@ class SearchViewBody extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        SearchResultBuilder(),
-      ],
+          SearchResultBuilder(),
+        ],
+      ),
     );
   }
 }
