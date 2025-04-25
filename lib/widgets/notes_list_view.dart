@@ -6,7 +6,8 @@ import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/note_item.dart';
 
 class NotesListview extends StatelessWidget {
-  const NotesListview({super.key});
+  const NotesListview({super.key, required this.notesList});
+  final List<NoteModel> notesList;
   final List<Color> colors = const [
     Color(0xffFFCD7B),
     Color(0xffE8E897),
@@ -17,8 +18,7 @@ class NotesListview extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesStates>(
       builder: (context, state) {
-        List<NoteModel> notesList =
-            BlocProvider.of<NotesCubit>(context).notesList ?? [];
+        
         return ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: ListView.builder(
