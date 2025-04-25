@@ -13,7 +13,7 @@ class SearchSliverAppBar extends StatelessWidget {
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0,
-      floating: true,
+      floating: false,
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
